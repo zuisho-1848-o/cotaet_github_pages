@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-blue: #55E;
+    --back-white: #fafafa;
+    --word-white: #f5f5f5;
+    --right-blue: #69d;
+    --word-gray: #eee;
+
+    --header-height: 64px;
+    --header-blue: var(--main-blue);
+}
+
+
+h1 {
+    font-size: 72px;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+
+
+
+/* ここから header */
+header {
+    height: var(--header-height);
+    background: var(--header-blue);
+    color: var(--word-white);
+    position: sticky;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+}
+
+header nav {
+    display: flex;
+}
+
+#logoBlock, #headerLogo {
+    border-radius: 50%;
+    height: 64px;
+    margin-left: 10px;
+}
+
+#headerNavUl {
+    display: flex;
+    width: calc(50vw - 64px);
+    margin-right: 0;
+    margin-left: auto;
+}
+
+#headerNavUl li {
+    width: 20%;
+    text-align: center;
+    color: var(--word-white);
+    height: var(--header-height);
+    line-height: var(--header-height);
+}
+
+#headerNavUl li a {
+    display: block;
+    cursor: pointer;
+}
+
+#headerNavUl li a:hover{
+    background: var(--right-blue);
+    color: var(--word-gray);
+}
+
+
+
+#headerNavUl li a span {
+    color: var(--word-white);
+}
+
+
+/* ここからmain */
+section {
+    margin: 30px;
+    margin-bottom: 50px;
+    padding: 30px 0;
+    padding-top: 64px;
+}
+
+.sectionTop {
+    text-align: center;
+}
+
+.sectionTop span {
+    font-size: 24px;
+}
+
+
+
+
+
+#topView {
+    padding-top: var(--header-height);
+    display: flex;
+}
+
+#topTextsBlock {
+    width: 40%;
+    padding-left: 50px;
+}
+
+#topTexts {
+    margin-top: calc(50% + 64px);
+    transform: translateY(-50%);
+}
+
+#topImage {
+    width: 60%;
+}
+
+#topImage img {
+    width: 100%;
+}
+
+#topTexts span {
+    font-size: 36px;
+}
+
+
+
+
+#explain {
+    padding: 50px;
+}
+
+#strength {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#salesPoints {
+    display: flex;
+}
+
+#robotImg {
+    width: 30%;
+}
+
+#robotImg img {
+    width: 100%;
+}
+
+#salesPointsTexts {
+    width: 70%;
+    padding: 10px;
+    padding-left: 50px;
+    font-size: 24px;
+}
+
+#salesPointsTexts ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+    padding: 30px 0;
+    margin: auto;
+}
+
+#salesPointsTexts ul LI {
+    list-style: disc;
+}
+
+
+
+
+
+#price {
+    text-align: center;
+}
+
+#priceTable {
+    width: 80%;
+    margin: 50px auto;
+    transform: translateX(-50px);
+}
+
+#priceTable th {
+    text-align: end;
+    padding: 5px;
+    width: fit-content;
+}
+
+#priceTable td {
+    background: #e3e8ea;
+    padding: 5px;
+}
+
+#plan td {
+    color: var(--word-white);
+}
+
+#plan td:nth-child(2) {
+    background: #adbcc3;
+}
+#plan td:nth-child(3) {
+    background: #78909c;
+}
+#plan td:nth-child(4) {
+    background: #576c77;
+}
+
+
+.middleButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.middleButtons a {
+    display: block;
+    width: 30%;
+    padding: 5px;
+    height: 50px;
+    line-height: 50px;
+    color: var(--word-white);
+    border-radius: 30px;
+    transition: all 0.5s ease;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.middleButtons a:nth-child(1) {
+    background: #ffab40;
+}
+.middleButtons a:nth-child(2) {
+    background: #ff2f92;
+}
+.middleButtons a:nth-child(3) {
+    background: #0097a7;
+}
+
+.middleButtons a:hover {
+    transform: translateY(-10px);
+}
+
+
+
+
+
+
+#example {
+    text-align: center;
+}
+
+
+.carousel {
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.company {
+    width: 30%;
+    background: #e3e8ea;
+    padding: 20px 10px;
+    border-radius: 20px;
+    word-wrap: break-word;
+    text-align: start;
+}
+
+.companyHeader {
+    display: flex;
+}
+
+.companyHeader img {
+    width: 30%;
+}
+
+.companyInfo {
+    padding-left: 20px;
+}
+
+.companyData {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.companyData span {
+    background: #78909c;
+    width: 30%;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--word-white);
+}
+
+.companyData span:nth-child(1) {
+    width: 40%;
+}
+
+
+.review {
+    display: flex;
+}
+
+.review img {
+    width: 30%;
+    margin: auto 0;
+}
+
+.review p {
+    width: 70%;
+    word-wrap: break-word;
+}
+
+
+
+
+
+
+.engineerIntro {
+    display: flex;
+}
+
+.engineerImg {
+    width: 30%;
+}
+
+.engineerImg img {
+    margin: auto;
+    width: 70%;
+    display: block;
+}
+
+.engineerInfo {
+    width: 70%;
+}
+
+.engineerData {
+    margin: 30px;
+}
+
+.engineerData p {
+    font-size: 24px;
+}
+
+.engineerPolicy {
+    margin: 30px;
+}
+
+
+#article {
+    width: 500px;
+    height: 300px;
+    line-height: 300px;
+    border: #111;
+    box-shadow: rgba(0,0,0,0.1) 0 0 10px 10px;
+    text-align: center;
+    margin: 30px auto;
+}
+
+#media h3 {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.mediaLogos {
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+
+}
+
+
+
+
+form {
+    margin: 30px auto;
+    display: block;
+    text-align: center;
+    max-width: 1000px;
+    padding: 30px 0;
+}
+
+
+.formItem {
+    display: flex;
+    margin: 20px;
+    min-height: 50px;
+    line-height: 50px;
+}
+
+
+
+
+.formItemLabel {
+    width: 30%;
+    text-align: start;
+    padding-left: 30px;
+    position: relative;
+}
+
+.formItem input {
+    width: 70%;
+    padding: 5px;
+    border-radius: 5px;
+    background: #e3e8ea;
+    border: #111 solid 1px;
+}
+
+.formItem textarea{
+    width: 70%;
+    padding: 5px;
+    border-radius: 5px;
+    background: #e3e8ea;
+    height: 70px;
+}
+
+.required::after {
+    content: "必須";
+    text-align: end;
+    right: 15px;
+    position: absolute;
+    border: 2px solid #78909c;
+    color: #78909c;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.submitBtn {
+    margin: 20px auto;
+    color: var(--word-white);
+    border: none;
+    display: block;
+    padding: 5px 30px;
+    height: 60px;
+    line-height: 50px;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+    min-width: 300px;
+}
+
+.submitBtn:hover {
+    transform: translateY(-10px);
+}
+
+#trialBtn {
+    background: #ffab40;
+}
+
+#contactBtn {
+    background: #ff2f92;
+}
+
+
+#contactBody {
+    height: 150px;
+}
+
+
