@@ -25,17 +25,18 @@ searchWindow.addEventListener("focusin", (e) => {
     suggest.classList.add("is_active");
 })
 
-// searchWindow.addEventListener("focusout", (e) => {
-//     suggest.classList.remove("is_active");
-// })
+searchWindow.addEventListener("focusout", (e) => {
+    suggest.classList.remove("is_active");
+}, true)
 
 searchWindow.addEventListener("input", (e) => {
     let inputText = e.target.value;
     // console.log(inputText);
-    let toBeDisplayedWords = suggestWords.filter(word => word.display.includes(inputText));
+    let toBeDisplayedWords = suggestWords.filter(word => word.display.includes(inputText)).concat(suggestWords.filter(word => !word.display.includes(inputText) && word.kana.includes(inputText)));
+    // console.log(toBeDisplayedWords.length);
     suggest.innerHTML = toBeDisplayedWords.map(word => {
         // `<li id="suggest_${word.index}" class="suggest_li"><a href="chat/?index=${word.index}&text=${word.display}">${word.display}</a></li>`
-        `<li id="suggest_${word.index}" class="suggest_li">${word.display}</li>`
-    }).join("\n")
+        return `<li id="suggest_${word.index}" class="suggest_li">${word.display}</li>`
+    }).slice(0,4).join("\n");
 })
 
