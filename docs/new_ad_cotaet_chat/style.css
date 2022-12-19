@@ -34,13 +34,16 @@
 }
 
 .suggest {
-    display: none;
+    display: block;
+    opacity: 0;
     border: 2px solid var(--search-border-color);
     width: var(--search-border-width);
+    overflow: hidden;
 }
 
+
 .suggest.is_active {
-    display: block;
+    opacity: 1;
 }
 
 .suggest li {

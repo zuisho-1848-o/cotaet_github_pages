@@ -1,6 +1,6 @@
 const searchWindow = document.querySelector(".searchWindow");
 const suggest = document.querySelector(".suggest");
-
+// const suggest_lis = document.querySelectorAll(".suggest li");
 
 const suggestWords = [
     { "display": "広告の企画を探したい", "kana": "こうこくのきかくをさがしたい", "index": 0},
@@ -10,21 +10,32 @@ const suggestWords = [
 ];
 
 
+document.addEventListener("click", (e) => {
+    if(e.target.classList.contains("suggest_li")) {
+        let index = e.target.id.split("_")[1];
+        let askText = e.target.innerHTML;
+        console.log(index);
+        console.log(askText);
+        window.location.href = `chat/?index=${index}&text=${askText}`; 
+    }
+})
 
 
 searchWindow.addEventListener("focusin", (e) => {
     suggest.classList.add("is_active");
 })
 
-searchWindow.addEventListener("focusout", (e) => {
-    suggest.classList.remove("is_active");
-})
+// searchWindow.addEventListener("focusout", (e) => {
+//     suggest.classList.remove("is_active");
+// })
 
 searchWindow.addEventListener("input", (e) => {
     let inputText = e.target.value;
     // console.log(inputText);
     let toBeDisplayedWords = suggestWords.filter(word => word.display.includes(inputText));
-    suggest.innerHTML = toBeDisplayedWords.map(word => `<li id="suggest_${word.index}">${word.display}</li>`).join("\n")
+    suggest.innerHTML = toBeDisplayedWords.map(word => {
+        // `<li id="suggest_${word.index}" class="suggest_li"><a href="chat/?index=${word.index}&text=${word.display}">${word.display}</a></li>`
+        `<li id="suggest_${word.index}" class="suggest_li">${word.display}</li>`
+    }).join("\n")
 })
-
 
