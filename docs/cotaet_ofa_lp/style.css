@@ -11,9 +11,9 @@
     --back-white: #fafafa;
     --word-white: #f5f5f5;
     --right-blue: #69d;
-    --word-gray: #eee;
+    --word-gray: #ddd;
 
-    --header-height: 64px;
+    --header-height: 80px;
     --header-blue: var(--main-blue);
 }
 
@@ -30,6 +30,21 @@ h3 {
     font-size: 32px;
 }
 
+.scrollPopUp {
+    opacity: .1;
+    transform: translateY(100px);
+    transition: all 1.5s;
+}
+
+.scrollPopUp.blockIn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.only_sp {
+    display: none;
+}
+
 
 
 
@@ -37,7 +52,7 @@ h3 {
 header {
     height: var(--header-height);
     background: var(--header-blue);
-    color: var(--word-white);
+    color: var(--header-blue);
     position: sticky;
     width: 100%;
     z-index: 10;
@@ -46,23 +61,26 @@ header {
 
 header nav {
     display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
 }
 
 #logoBlock, #headerLogo {
-    border-radius: 50%;
-    height: 64px;
+    height: var(--header-height);
     margin-left: 10px;
+    width: auto;
 }
 
 #headerNavUl {
     display: flex;
-    width: calc(50vw - 64px);
+    /* width: calc(50vw - 64px); */
     margin-right: 0;
     margin-left: auto;
 }
 
 #headerNavUl li {
-    width: 20%;
+    padding: 0 10px;
     text-align: center;
     color: var(--word-white);
     height: var(--header-height);
@@ -74,24 +92,50 @@ header nav {
     cursor: pointer;
 }
 
-#headerNavUl li a:hover{
-    background: var(--right-blue);
-    color: var(--word-gray);
-}
-
 
 
 #headerNavUl li a span {
     color: var(--word-white);
+    display: block;
+
+}
+
+#headerNavUl li a span:hover{
+    color: var(--word-gray);
+}
+
+
+#hamburgerBtn {
+    display: none;
+    height: var(--header-height);
+    width: var(--header-height);
+}
+
+#hamburgerBtn:hover {
+    background: #66f;
+    cursor: pointer;
+}
+
+#hamburgerBtn span {
+    display: block;
+    height: 1px;
+    width: 60%;
+    background: var(--back-white);
 }
 
 
 /* ここからmain */
+main {
+    width: 80%;
+    margin: auto;
+}
+
+
 section {
     margin: 30px;
     margin-bottom: 50px;
     padding: 30px 0;
-    padding-top: 64px;
+    padding-top: var(--header-height);
 }
 
 .sectionTop {
@@ -102,6 +146,16 @@ section {
     font-size: 24px;
 }
 
+
+#topOnlyImage {
+    margin: 0;
+    padding: 0;
+    transform: translateX(-10vw);
+}
+
+#topOnlyImage img {
+    width: 100vw;
+}
 
 
 
@@ -117,8 +171,8 @@ section {
 }
 
 #topTexts {
-    margin-top: calc(50% + 64px);
-    transform: translateY(-50%);
+    /* margin-top: calc(50% + 64px);
+    transform: translateY(-50%); */
 }
 
 #topImage {
@@ -359,7 +413,7 @@ section {
 
 
 #article {
-    width: 500px;
+    max-width: 500px;
     height: 300px;
     line-height: 300px;
     border: #111;
@@ -378,7 +432,7 @@ section {
     display: flex;
     justify-content: space-between;
     margin-top: 0;
-
+    flex-wrap: wrap;
 }
 
 
@@ -389,7 +443,9 @@ form {
     display: block;
     text-align: center;
     max-width: 1000px;
-    padding: 30px 0;
+    padding: 50px 10px;
+    border-radius: 30px;
+    background: #bad2de;
 }
 
 
@@ -416,6 +472,8 @@ form {
     border-radius: 5px;
     background: #e3e8ea;
     border: #111 solid 1px;
+    height: 50px;
+    box-sizing: border-box;
 }
 
 .formItem textarea{
@@ -471,3 +529,153 @@ form {
 }
 
 
+
+
+@media screen and (max-width:900px) {
+    .only_sp {
+        display: inline;
+    }
+
+    .only_pc {
+        display: none;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+
+
+    #logoBlock {
+        margin-left: 0;
+    }
+
+    header nav {
+        width: 100%;
+    }
+
+    #headerNavUl {
+        transform: translateX(100vw);
+        display: block;
+        position: absolute;
+        background: var(--main-blue);
+        width: 100vw;
+        margin: var(--header-height) 0;
+        height: calc(100vh - 64px);
+        text-align: center;
+        opacity: 0;
+        transition: all 0.5s;
+    }
+
+    #headerNavUl.active {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    #headerNavUl li {
+        margin: 10px auto;
+        width: 80%;
+        border-top: 1px solid var(--back-white);
+        padding: 10px 0;
+    }
+
+    #hamburgerBtn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 0;
+        box-sizing: border-box;
+    }
+
+    main {
+        width: 100%;
+    }
+
+
+    #topOnlyImage {
+        transform: translateX(0);
+    }
+
+    #topTexts span {
+        font-size: 24px;
+    }
+
+    #strength {
+        font-size: 32px;
+    }
+
+    #explain { 
+        padding: 30px 0;
+    }
+
+    #salesPoints {
+        display: block;
+    }
+
+    #robotImg {
+        width: 100%;
+    }
+
+
+    #priceTable {
+        width: 100%;
+        transform: translateX(0);
+    }
+    
+    
+    
+
+
+    .middleButtons {
+        display: block;
+    }
+    
+    .middleButtons a {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+
+    .company {
+        width: 100%;
+    }
+
+    .engineerIntro {
+        display: block;
+    }
+
+    .engineerImg, .engineerInfo {
+        width: 100%;
+    }
+
+
+
+    .formItem {
+        display: block;
+        margin: 0;
+    }
+
+    .formItemLabel {
+        width: 70%;
+    }
+
+    .required::after {
+        content: "*";
+        right: 0;
+        position: inherit;
+        border: none;
+        color: red;
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
+
+}
