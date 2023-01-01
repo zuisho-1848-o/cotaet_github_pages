@@ -5,6 +5,10 @@
 cp -r ../new_ad_cotaet_chat/docs/ docs/new_ad_cotaet_chat 
 ```
 
+## cotaet_hp_lp
+```
+cp -r ../cotaet_hp_lp/docs/ docs/cotaet_hp_lp
+```
 
 ## cotaet_ofa_lp
 ```

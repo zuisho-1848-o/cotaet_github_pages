@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" id="logoBlock">
+                <img src="./images/cotaet_01c1f1.png" alt="ロゴ" id="headerLogo" width="64" height="64">
+            </a>
+            <ul id="headerNavUl">
+                <li><a href="service"><span>Service</span></a></li>
+                <li><a href="company"><span>Company</span></a></li>
+                <li><a href="recruit"><span>Recruit</span></a></li>
+                <li><a href="contact"><span>Contact</span></a></li>
+            </ul>
+            <div id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="firstView">
+            <div id="topTexts">
+                <h1>DXに新たな<br class="only_sp"> “答え” を</h1>
+                <h3>Webとテクノロジーの力で<br class="only_sp">日本のDXを変革する</h3>
+            </div>
+            <picture>
+                <source media="(max-width: 600px)" srcset="./images/top1_sp.png">
+                <source media="(min-width: 601px)" srcset="./images/top1.png">
+                <img src="./images/top1.png" alt="トップビュー">
+            </picture>
+        </section>
+
+        <section id="service">
+            <h2>Service</h2>
+            <p><b>株式会社cotaet</b> は、Webとテクノロジーの力から日本のDXを変革するというビジョンのもと、プロダクト開発を続けている企業です。営業・マーケティングの支援になるようなプロダクトや機械学習などの最新技術を活用したプロダクトを提供しています。</p>
+            
+            <div class="products">
+                <div class="product scrollPopUp">
+                    <a href="service#db">
+                        <img src="./images/product_db.png" alt="企業データベース">
+                        <h4>企業データベース事業</h4>
+                        <p>全国50万社の企業データベースを独自に収集しています。業種や規模などの情報もあり、戦略的な営業活動にご利用いただけます。</p>
+                    </a>
+                </div>
+                <div class="product scrollPopUp delay1">
+                    <a href="service#sns">
+                        <img src="./images/product_sns.png" alt="SNS自動運用">
+                        <h4>SNS運用自動化事業</h4>
+                        <p>貴社のSNSを自動で運用するとともに、弊社独自の技術による分析を活用し、将来にわたる貴社SNSの最適な運用方針をご提案します。</p>
+                    </a>
+                </div>
+                <div class="product scrollPopUp delay2">
+                    <a href="service#chatbot">
+                        <img src="./images/product_chatbot.png" alt="ChatBot">
+                        <h4>ChatBot事業</h4>
+                        <p>全国50万社の企業データベースを独自に収集しています。業種や規模などの情報もあり、戦略的な営業活動にご利用いただけます。</p>
+                    </a>
+                </div>
+            </div>
+            <a href="service" class="navBtn">サービス一覧へ</a>
+        </section>
+
+        <section id="company">
+            <h2>Company</h2>
+            <div id="companyImg">
+                <img src="./images/company.png" alt="会社情報">
+            </div>
+            <div id="companyBlocks">
+                <div id="companytexts">
+                    <h4>DXに新たな “答え” を</h4>
+                    <h2>株式会社cotaet</h2>
+                </div>
+                <a href="company" class="navBtn">会社情報へ</a>
+            </div>
+        </section>
+
+        <div class="break"></div>
+
+        <section id="recruitContact">
+            <picture>
+                <source media="(max-width: 600px)" srcset="./images/contact_recruit_sp.png">
+                <source media="(min-width: 601px)" srcset="./images/contact_recruit.png">
+                <img src="./images/contact_recruit.png" alt="お問い合わせ">
+            </picture>
+            <div class="cards scrollPopUp">
+                <div class="card">
+                    <h2>Recruit</h2>
+                    <p>cotaet では共に未来を切り開く仲間を募集しています。</p>
+                    <a href="recruit" class="navBtn">採用情報へ</a>
+                </div>
+                <div class="card">
+                    <h2>Contact</h2>
+                    <p>こちらから、お気軽にお問い合わせください。</p>
+                    <a href="contact" class="navBtn">お問い合わせへ</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footerBlock">
+            <nav>
+                <ul>
+                    <li><a href="service"><span>Service</span></a></li>
+                    <li><a href="company"><span>Company</span></a></li>
+                    <li><a href="recruit"><span>Recruit</span></a></li>
+                    <li><a href="contact"><span>Contact</span></a></li>
+                </ul>
+            </nav>
+            <div class="snsIcons">
+                <a class="footerTwitter" href="https://twitter.com/cotaet_official" target="_blank" rel="noopener noreferrer">
+                    <img src="images/twitter_logo_blue.svg" alt="Twitter" width="50" height="50">
+                </a>
+            </div>
+        </div>
+        <small>Copyright © 2022 cotaet</small>
+    </footer>
+</body>
+<script src="main.js"></script>
+</html>
