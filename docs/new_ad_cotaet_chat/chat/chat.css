@@ -1,0 +1,454 @@
+/* Webサイト側の設定。本番ではいれない */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom right, white, blue );
+}
+
+main {
+    height: 1000px;
+}
+
+
+
+/* ここからchatのcss */
+
+/* 変数設定 */
+:root {
+    --chat-width: 350px;
+    --chat-height: 500px;
+    --chat-bottom: 30px;
+    --chat-right: 30px;
+
+    --chat-mobile-width: 375px;
+    --chat-mobile-height: 640px;
+
+    --light-blue: #0ff;
+    --normal-blue: #22d;
+
+    --chat-lightest: #e3f1fc;
+    --chat-darkest: #044793;
+    --chat-white: #fff;
+    --chat-black: #000;
+
+    --chat-header-bg-color: var(--chat-lightest);
+    --chat-main-bg-color: #7cb4ed;
+    --chat-footer-bg-color: #c5c5c5;
+
+    --chat-start-bg-color: var(--chat-darkest);
+    --chat-message-bg-color: var(--chat-darkest);
+    --chat-choice-block-bg-color: var(--chat-white);
+    --chat-choice-option-bg-color: var(--chat-lightest);
+    --chat-chosen-option-bg-color: #95d1f9;
+    --chat-header-text-color: var(--chat-darkest);
+    --chat-submit-btn-color: var(--chat-darkest);
+    --chat-chosen-option-border-color: #a6d2f7;
+
+    --chat-header-height: 50px;
+    --chat-footer-height: 20px;
+    --chat-main-height: 430px;
+    --chat-main-mobile-height: 570px;
+}
+
+
+.chat, .chat * {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    font-family: "Hiragino Sans","ＭＳ ゴシック", sans-serif;
+}
+
+
+.display-none {
+    display: none;
+    height: 0;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+
+
+.chat {
+    width: var(--chat-width);
+    max-height: var(--chat-height);
+    height: -webkit-fill-available;
+    /* border: #222 solid 1px; */
+    right: var(--chat-right);
+    position: fixed;
+    bottom: var(--chat-bottom);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(0 0 0 / 20%);
+    transition: all 0.5s;
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 10000;
+    font-size: 12.8px;
+}
+
+.chat.display-none {
+    transform: translateY(var(--chat-height));
+    transition: all 0.5s;
+}
+
+.chatHeader {
+    /* display: flex; */
+    height: var(--chat-header-height);
+    /* justify-content: center; */
+    text-align: center;
+    background-color: var(--chat-header-bg-color);
+    color: var(--chat-header-text-color);
+    border-radius: 10px 10px 0 0;
+}
+
+.chatTitle {
+    display: block;
+    height: var(--chat-header-height);
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+.closeButton {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background: initial;
+    border: none;
+    bottom: 37.5px;
+    margin-right: 15px;
+    margin-left: auto;
+}
+
+.closeButton:hover {
+    background: var(--chat-white);
+    cursor: pointer;
+}
+
+.closeButton::before, .closeButton::after { /* 共通設定 */
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px; /* 棒の幅（太さ） */
+    height: 20px; /* 棒の高さ */
+    background: var(--chat-header-text-color);
+}
+
+.closeButton::before {
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.closeButton::after {
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+
+.chatMain {
+    height: var(--chat-main-height);
+    overflow-y: auto;
+    transition: all 0.5s;
+    background: var(--chat-main-bg-color);
+}
+
+/* 環境によってはただスクロールバーが消えてしまうようなので一旦なし */
+/* .chatMain::-webkit-scrollbar {
+    width: 16px;
+} */
+
+.chatMessageBlock {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    max-width: 70%;
+    line-height: 20px;
+}
+
+
+.chatMessageBlock:last-child {
+    margin-bottom: 100px;
+}
+
+.chatFromBot {
+    border-radius: 10px 10px 10px 0;
+    background: var(--chat-message-bg-color);
+    color: var(--chat-white);
+    margin-left: 50px;
+    position: relative;
+    width: fit-content;
+}
+
+.chatFromBot::before {
+    content: " ";
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    position: absolute;
+    background-image: url("character.png");
+    background-size: contain;
+    transform: translateX(-55px);
+    bottom: 0;
+    border: var(--chat-darkest) 2px solid;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.choiceBlock {
+    border-radius: 10px 10px 0 10px;
+    background: var(--chat-choice-block-bg-color);
+    color: var(--chat-black);
+    margin: 5px 5px 5px auto;
+}
+
+
+.singleChoiceOptionRadio, .multiChoiceOptionCheckbox {
+    display: none;
+}
+
+.singleChoiceOptionRadio:checked + .singleChoiceOptionLabel, .multiChoiceOptionCheckbox:checked + .multiChoiceOptionLabel {
+    background: var(--chat-chosen-option-bg-color);
+    color: var(--chat-black);
+}
+
+.singleChoiceOptionLabel, .multiChoiceOptionLabel {
+    background: var(--chat-choice-option-bg-color);
+    margin: 2px;
+    width: 80%;
+    padding: 3px;
+    padding-left: 25px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.singleChoiceOptionLabel::before, .multiChoiceOptionLabel::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: var(--chat-chosen-option-border-color) 1px solid;
+    background: var(--chat-white);
+}
+
+.singleChoiceOptionLabel::before {
+    border-radius: 50%;
+}
+
+.singleChoiceOptionRadio:checked + .singleChoiceOptionLabel::before {
+    background: var(--chat-darkest);
+}
+
+/* チェックマーク */
+.multiChoiceOptionCheckbox:checked + .multiChoiceOptionLabel::after {
+    content: "";
+    width: 10px;
+    height: 5px;
+    border-left: 3px solid var(--chat-darkest);
+    border-bottom: 3px solid var(--chat-darkest);
+    transform: rotate(-45deg);
+    bottom: 10px;
+    position: absolute;
+    left: 5px;
+}
+
+.singleChoiceOptionLabel:hover, .multiChoiceOptionLabel:hover {
+    cursor: pointer;
+    /* transform: scale(1.05);
+    background: var(--normal-blue);
+    color: #eee; */
+}
+
+
+.answerTextInputArea {
+    width: 90%;
+    height: 70px;
+    border-radius: 5px;
+    border: var(--chat-chosen-option-border-color) 1px solid;
+    background: var(--chat-lightest);
+    padding: 5px;
+    padding-left: 10px;
+    margin-left: 2.5%;
+}
+
+.answerTextInputArea:focus {
+    background: var(--chat-white);
+    outline: var(--chat-chosen-option-border-color) 2px solid; 
+}
+
+
+.consentFormArea {
+    padding: 10px;
+    height: 200px;
+    border-radius: 5px;
+    margin-left: 10px;
+    width: 80%;
+}
+
+
+
+.answerSubmitButton {
+    margin-left: auto;
+    margin-right: 40px;
+    display: block;
+    background: var(--chat-submit-btn-color);
+    border: none;
+    width: 40%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: var(--chat-white);
+    padding: 3px;
+    height: 20px;
+}
+
+.answerSubmitButton:hover {
+    cursor: pointer;
+}
+
+.choiceBlock-empty {
+    color: red;
+}
+
+
+.PDFBlock {
+    text-align: center;
+    padding: 20px;
+    background: var(--chat-lightest);
+}
+
+.PDFBlock a {
+    display: block;
+    width: fit-content;
+    margin: auto;
+    margin-top: 5px;
+    height: 30px;
+    line-height: 30px;
+    background: var(--chat-submit-btn-color);
+    border-radius: 15px;
+    color: var(--chat-white);
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.TagInputTitle {
+    display: block;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tagMultiChoiceInput {
+    display: none;
+}
+
+.tagMultiChoiceInputLabelBlock {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tagMultiChoiceInputLabel {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    border: black 1px solid;
+    margin: 5px;
+    width: fit-content;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.tagMultiChoiceInput:checked + .tagMultiChoiceInputLabel {
+    background: #ddd;
+}
+
+
+.chatFooter {
+    height: var(--chat-footer-height);
+    line-height: var(--chat-footer-height);
+    text-align: center;
+    background: var(--chat-footer-bg-color);
+    color: var(--chat-white);
+    border-radius: 0 0 10px 10px;
+}
+
+
+
+
+.chatStart {
+    color: var(--chat-white);
+    width: var(--chat-width);
+    /* background: var(--chat-start-bg-color); */
+    height: 66px;
+    text-align: center;
+    line-height: 66px;
+    border-radius: 25px;
+    right: var(--chat-right);
+    bottom: var(--chat-bottom);
+    position: fixed;
+    transition: all 0.5s;
+    opacity: 1;
+    /* box-shadow: 5px 5px 5px rgb(0 0 0 / 20%); */
+    font-size: 30px;
+}
+
+.chatStart img {
+    width: inherit;
+}
+
+.chatStart:hover {
+    /* background: #cee985; */
+    cursor: pointer;
+}
+
+.chatStartBtnPC {
+    bottom: 20px;
+}
+
+
+
+
+
+/* スマホ用の設定 */
+@media screen and (max-width: 520px) {
+    .chat, .chatStart{
+        /* max-width: var(--chat-mobile-width); */
+        /* max-height: var(--chat-mobile-height); */
+        max-height: 100vh;
+        width: 100%;
+        /* right: calc((100% - var(--chat-mobile-width))/2); */
+        right: 0;
+        bottom: 0;
+        margin-top: auto;
+    }
+
+    .chat {
+        height: -webkit-fill-available;
+        top: 0;
+        margin-top: 0;
+    }
+
+    .chatMain {
+        /* max-height: var(--chat-main-mobile-height); */
+        max-height: 100%;
+        height: calc(100% - 70px);
+    }
+
+    
+}
+
+
+/* @media screen and (max-width: 375px) {
+    .chat {
+        right: 0;
+    }
+} */

@@ -2,7 +2,7 @@
 
 ## new_ad_cotaet_chat
 ```
-cp -r ../new_ad_cotaet_chat/docs/ docs/new_ad_cotaet_chat 
+cp -r ../new_ad_cotaet_chat/docs/ docs/new_ad_cotaet_chat
 ```
 
 ## cotaet_hp_lp
