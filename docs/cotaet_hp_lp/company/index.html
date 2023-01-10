@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="company.css">
 </head>
 <body>
     <header>
@@ -28,24 +29,56 @@
     </header>
 
     <main>
-        メモ<br>
-        ・上に画像と「会社情報」<br>
-        ・ビジョンとミッション<br>
-        　- 作ろう。<br>
-        　- 新しい、しごと。<br>
-        　- 新しい、ルール。<br>
-        　- 新しい、夢。<br>
-        　- 新しい、技術。<br>
-        　- 新しい、答。<br>
-        　- cotaet<br>
-        ・代表挨拶<br>
-        ・会社の情報<br>
-        　- 会社名<br>
-        　- 住所<br>
-        　- Webサイト<br>
-        　- 資本金<br>
-        　- 設立<br>
-        　- 事業内容<br>
+        <section id="firstView">
+            <div id="topTexts">
+                <h1 style="z-index: 5;">会社案内</h1>
+            </div>
+            <picture style="display: block;">
+                <!-- <source media="(max-width: 600px)" srcset="../images/company/company_top_half.png">
+                <source media="(min-width: 601px)" srcset="../images/company/company_top_half.png"> -->
+                <img src="../images/company/company_top_half.png" alt="トップビュー" style="opacity: 0.5; display: block;">
+            </picture>
+        </section>
+
+        <section class="break"></section>
+        <h2 style="margin-bottom: 30px;">VISION</h2>
+        <section id="vision">
+            <img src="../images/company/company_vision.png" alt="vision">
+        </section>
+
+        <section id="companyInfo">
+            <h2>会社情報</h2>
+            <table id="companyInfoTable">
+                <tr>
+                    <th>会社名</th>
+                    <td>株式会社cotaet</td>
+                </tr>
+                <tr>
+                    <th>住所</th>
+                    <td>東京都渋谷区...</td>
+                </tr>
+                <tr>
+                    <th>Webサイト</th>
+                    <td><a href="">https://....</a></td>
+                </tr>
+                <tr>
+                    <th>資本金</th>
+                    <td>500万円</td>
+                </tr>
+                <tr>
+                    <th>設立</th>
+                    <td>2023年1月X日</td>
+                </tr>
+                <tr>
+                    <th>決算期</th>
+                    <td>1月</td>
+                </tr>
+                <tr>
+                    <th>事業内容</th>
+                    <td></td>
+                </tr>
+            </table>
+        </section>
     </main>
 
     <footer>

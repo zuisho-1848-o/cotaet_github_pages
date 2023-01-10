@@ -1,0 +1,118 @@
+#contactForm {
+    margin: 30px 0;
+}
+
+#contactForm a {
+    color: blue;
+    text-decoration: underline;
+}
+
+form {
+    margin: 30px auto;
+    display: block;
+    text-align: center;
+    max-width: 1000px;
+    padding: 50px 10px;
+    border-radius: 30px;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 5px;
+}
+
+
+.formItem {
+    display: flex;
+    margin: 20px;
+    min-height: 50px;
+    line-height: 50px;
+}
+
+
+
+
+.formItemLabel {
+    width: 30%;
+    text-align: start;
+    padding-left: 30px;
+    position: relative;
+}
+
+.formItem input {
+    width: 70%;
+    padding: 5px;
+    border-radius: 5px;
+    background: #f3f8fa;
+    border: #111 solid 1px;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+.formItem textarea{
+    width: 70%;
+    padding: 5px;
+    border-radius: 5px;
+    background: #f3f8fa;
+    order: #111 solid 1px;
+    height: 200px;
+}
+
+.required::after {
+    content: "必須";
+    text-align: end;
+    right: 15px;
+    position: absolute;
+    border: 2px solid #01c1f1;
+    color: #01c1f1;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.submitBtn {
+    margin: 20px auto;
+    color: var(--word-white);
+    border: none;
+    display: block;
+    padding: 5px 30px;
+    height: 60px;
+    line-height: 50px;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+    min-width: 300px;
+    background: var(--corporate-color);
+}
+
+.submitBtn:hover {
+    transform: translateY(-10px);
+}
+
+
+#FAQ {
+    margin: 50px 0;
+}
+
+
+
+
+
+
+@media screen and (max-width:900px) {
+    .formItem {
+        display: block;
+        margin: 0;
+    }
+
+    .formItemLabel {
+        width: 70%;
+    }
+
+    .required::after {
+        content: "*";
+        right: 0;
+        position: inherit;
+        border: none;
+        color: red;
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
+}

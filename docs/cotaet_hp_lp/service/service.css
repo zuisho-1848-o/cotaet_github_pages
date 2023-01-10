@@ -1,0 +1,50 @@
+.serviceSection {
+    border-radius: 15px;
+    margin: 100px 0;
+    box-shadow: rgba(0,0,0,0.3) 5px 5px 5px 5px;
+}
+
+.productHeader {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.productHeader img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    opacity: 0.3;
+    border-radius: 15px 15px 0 0;
+}
+
+.productHeader h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: white 1px 1px 4px;
+}
+
+.productMain {
+    padding: 10px;
+}
+
+.productFeatures {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+}
+
+
+.feature {
+    width: 30%;
+}
+
+.feature img {
+    height: 70px;
+    margin: 20px auto;
+    display: block;
+}
+
+

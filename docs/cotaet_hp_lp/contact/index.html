@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="contact.css">
 </head>
 <body>
     <header>
@@ -28,8 +29,58 @@
     </header>
 
     <main>
+        <section id="firstView">
+            <div id="topTexts">
+                <h1 style="z-index: 5;">お問い合わせ</h1>
+            </div>
+            <picture>
+                <!-- <source media="(max-width: 600px)" srcset="../images/contact_top_half.png">
+                <source media="(min-width: 601px)" srcset="../images/contact_top_half.png"> -->
+                <img src="../images/contact_top_half.png" alt="トップビュー" style="opacity: 0.5;">
+            </picture>
+        </section>
+
+        <section id="contactForm">
+            <h2>お問い合わせフォーム</h2>
+            <form action="">
+                <div class="formItem">
+                    <p class="formItemLabel">会社名</p>
+                    <input type="text"  placeholder="例）株式会社令和">
+                </div>
+                <div class="formItem">
+                    <p class="formItemLabel">部署名</p>
+                    <input type="text"placeholder="例）営業部">
+                </div>
+                <div class="formItem">
+                    <p class="formItemLabel required">お名前</p>
+                    <input type="text" placeholder="例）山田太郎">
+                </div>
+                <div class="formItem">
+                    <p class="formItemLabel required">フリガナ</p>
+                    <input type="text" placeholder="例）ヤマダタロウ">
+                </div>
+                <div class="formItem">
+                    <p class="formItemLabel required">メールアドレス</p>
+                    <input type="email" placeholder="例）example@gmail.com">
+                </div>
+                <div class="formItem">
+                    <p class="formItemLabel required">電話番号</p>
+                    <input type="phone" placeholder="例）090-0000-0000">
+                </div>
+                <div class="formItem">
+                    <p class="formItemLabel required">お問い合わせ内容</p>
+                    <textarea id="contactBody"></textarea>
+                </div>
+
+                <p>以下のボタンを押すことにより、当社の<a href="../terms-of-service">利用規約</a>と<a href="../privacy-policy">プライバシーポリシー</a>に同意したものとします。</p>
+                <input type="submit" class="submitBtn" value="送信する" id="contactBtn">
+            </form>
+        </section>
+
+        <section id="FAQ">
+            <h2>FAQ</h2>
+        </section>
         メモ<br>
-        ・お問い合わせフォームをおく<br>
         ・用途ごとに分ける？<br>
         ・ChatBot化を考える<br>
     </main>
