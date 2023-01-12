@@ -20,7 +20,7 @@ main {
 :root {
     --chat-width: 350px;
     --chat-height: 500px;
-    --chat-bottom: 30px;
+    --chat-bottom: 60px;
     --chat-right: 30px;
 
     --chat-mobile-width: 375px;
@@ -197,7 +197,7 @@ main {
     box-sizing: border-box;
 }
 
-.choiceBlock {
+.choiceBlock,.chatFromUser {
     border-radius: 10px 10px 0 10px;
     background: var(--chat-choice-block-bg-color);
     color: var(--chat-black);
@@ -338,6 +338,10 @@ main {
     padding: 5px 10px;
 }
 
+.PDFInput {
+    width: 100%;
+}
+
 .TagInputTitle {
     display: block;
     margin-left: 20px;
@@ -370,6 +374,37 @@ main {
 .tagMultiChoiceInput:checked + .tagMultiChoiceInputLabel {
     background: #ddd;
 }
+
+
+
+.chatTextInput {
+    width: 100%;
+    display: flex;
+    background: var(--chat-white);
+}
+
+#chatText {
+    display: block;
+    border: none;
+    width: 80%;
+    height: 30px;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+#chatTextSubmit {
+    display: block;
+    border: none;
+    width: 20%;
+    border-radius: 10px;
+    margin: 5px;
+    background: var(--chat-main-bg-color);
+}
+
+
+
+
+
 
 
 .chatFooter {
