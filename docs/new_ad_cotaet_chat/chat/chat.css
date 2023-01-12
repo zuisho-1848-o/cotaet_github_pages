@@ -50,7 +50,7 @@ main {
     --chat-header-height: 50px;
     --chat-footer-height: 20px;
     --chat-main-height: 430px;
-    --chat-main-mobile-height: 570px;
+    --chat-main-mobile-height: 540px;
 }
 
 
@@ -475,7 +475,7 @@ main {
     .chatMain {
         /* max-height: var(--chat-main-mobile-height); */
         max-height: 100%;
-        height: calc(100% - 70px);
+        height: calc(100% - 120px);
     }
 
     
