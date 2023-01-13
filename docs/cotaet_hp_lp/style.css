@@ -165,6 +165,7 @@ main {
 
 #firstView img {
     width: 100vw;
+    display: block;
 }
 
 #topTexts {
@@ -182,7 +183,7 @@ main {
 #service {
     padding: 30px 0;
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 #service::before {
@@ -295,6 +296,7 @@ main {
     min-height: 400px;
     max-height: 500px;
     object-fit: cover;
+    display: block;
 }
 
 #companyBlocks {
@@ -303,7 +305,7 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
     top: 0;
-    left: 0; 
+    left: 0;
     height: 100%;
     width: 100%;
     text-align: center;
@@ -321,7 +323,7 @@ main {
     height: 100px;
     width: 100vw;
     background: linear-gradient(to right, #01c1f1, #4bd);
-    transform: translate(-10vw, -10px);
+    transform: translateX(-10vw);
     margin-bottom: 50px;
 }
 
@@ -404,6 +406,7 @@ footer {
 
 .snsIcons {
     display: flex;
+    width: 30%;
 }
 
 .snsIcons a {
@@ -454,6 +457,10 @@ small {
 
     #logoBlock {
         margin-left: 0;
+    }
+
+    body {
+        overflow-x: hidden;
     }
 
     header nav {
@@ -519,7 +526,7 @@ small {
     }
 
     .break {
-        transform: translate(0, -10px);
+        transform: translateX(0);
     }
 
     .cards {
@@ -551,11 +558,11 @@ small {
         width: 80%;
     }
 
-    
+
     footer {
         height: 160px;
     }
-    
+
     .footerBlock nav ul {
         flex-wrap: wrap;
     }

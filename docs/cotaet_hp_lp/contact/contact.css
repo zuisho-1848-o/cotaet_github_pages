@@ -97,6 +97,17 @@ form {
 
 
 @media screen and (max-width:900px) {
+    h2 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+
+    form {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
     .formItem {
         display: block;
         margin: 0;
