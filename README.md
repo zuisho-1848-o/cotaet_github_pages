@@ -12,5 +12,5 @@ cp -r ../cotaet_hp_lp/docs/ docs/cotaet_hp_lp
 
 ## cotaet_ofa_lp
 ```
-cp -r ../cotaet_ofa_lp/docs/ docs/cotaet_ofa_lp 
+cp -r ../cotaet_ofa_lp/docs/ docs/cotaet_ofa_lp
 ```

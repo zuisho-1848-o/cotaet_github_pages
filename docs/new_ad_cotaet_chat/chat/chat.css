@@ -376,6 +376,78 @@ main {
 }
 
 
+.fullScreenBlock {
+    background: linear-gradient(to right bottom, #fff, #ddd);
+    position: absolute;
+    width: 100vw;
+    min-height: 100vh;
+    left: 0;
+    top: 0;
+    /* flex-wrap: wrap; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 20000;
+}
+
+.fullScreenBlock h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.fullScreenTagGroup {
+    margin: 20px;
+}
+
+.fullScreenTagCategory {
+    margin-left: 30px;
+}
+
+.fullScreenTagValues {
+    display: flex;
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+}
+
+
+.fullScreenTagValInput {
+    display: none;
+}
+
+.fullScreenButton {
+    text-align: center;
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 30px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    margin: 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.fullScreenButton:hover {
+    transform: translateY(-20px);
+}
+
+.fullScreenTagValInput:checked + .fullScreenTagValLabel{
+    scale: 0.8;
+}
+
+.closeFullScreenBlockButton {
+    background: linear-gradient(to right bottom, #e33, #f77);
+    margin: 20px auto;
+}
+
+.fullScreenBlock.display-none {
+    display: none;
+}
+
+
+
+
+
 
 .chatTextInput {
     width: 100%;
